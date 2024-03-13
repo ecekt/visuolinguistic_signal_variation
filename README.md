@@ -4,6 +4,8 @@ Repository for the EACL 2024 paper 'Describing Images *Fast and Slow*: Quantifyi
 
 For any questions regarding the contents of this repository, please contact Ece Takmaz at ece.takmaz@uva.nl (or e.k.takmaz@uu.nl).
 
+![variation example](variationsignals_github.png)
+
 **experiments** This directory includes the code to analyze the visuo-linguistic variation in descriptions and gaze as humans describe images. In addition, the code for the analysis of pretrained models in how much they capture human variation. 
 
 **segment** includes utilizing the Segment Anything Model, giving eye movement data as prompts to segment image regions.
