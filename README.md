@@ -59,7 +59,7 @@ https://drive.google.com/drive/folders/1tTO2yFIjhXqkQI7dVn5isgPNsjAELwmu?usp=dri
 # WhisperX
 Install WhisperX following the instructions at https://github.com/m-bain/whisperX
 
-I use WhisperX to obtain the timestamps of the words uttered. Since the descriptions are in Dutch, I use the language_code ‘nl’, which loads the ‘jonatasgrosman/wav2vec2-large-xlsr-53-dutch’. If you don’t specify the language_code, WhisperX can detect the language, unfortunately for some Dutch audio it detected German. Therefore, I suggest specifying the language. 
+I use WhisperX to obtain the timestamps of the words uttered. Since the descriptions are in Dutch, I use the language_code ‘nl’, which loads the Dutch model ‘jonatasgrosman/wav2vec2-large-xlsr-53-dutch’. If you don’t specify the language_code, WhisperX can detect the language. Unfortunately, for some Dutch audio, it detects German. Therefore, I suggest specifying the language. 
 
 You can download the contents of the folders as .zip archives from https://drive.google.com/drive/folders/1KKQpzvzviqIU56-O1BIblAv_47ejSzuQ?usp=drive_link 
 
