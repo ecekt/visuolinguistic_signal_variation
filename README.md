@@ -20,15 +20,15 @@ How to preprocess the data and conduct the experiments
 # Segment
 Install the Segment Anything Model (SAM) following the instructions at https://github.com/facebookresearch/segment-anything 
 
-SAM takes in coordinates on an image as prompts and then predicts the object on which the coordinates fall and outputs a mask corresponding to the object. In this work, I use gaze data as coordinate prompts.
+SAM takes in coordinates on an image as prompts, and then, predicts the object on which the coordinates fall. Afterwards, SAM outputs a mask corresponding to the object. In this work, I use gaze data as coordinate prompts.
 
 I use the ‘sam_vit_l_0b3195.pth’ model (ViT-L SAM).
 
-The scripts in this directory feed gaze data coming from each fixation into SAM, which yields object predictions for each fixation. I then use the bounding boxes of these predictions to calculate variation in gaze. 
+The scripts in this directory feed gaze data coming from each fixation into SAM, which yields object predictions for each fixation. I then use the bounding boxes of these predictions to calculate the variation in gaze. 
 
-In the images directory, I provide the images from the DIDEC dataset (gaze coordinates correspond to images with gray borders as shown during data collection in the DIDEC paper; therefore, I offset the coordinates, skipping the borders). 
+In the **images** directory, I provide the images from the DIDEC dataset (gaze coordinates correspond to images with gray borders as shown during data collection in the DIDEC paper; therefore, I offset the coordinates, skipping the borders). 
 
-In the didec directory, you should place our file containing all preprocessed fixations per participant and per image (fixation_events_DS_2023.json). It can be downloaded from here: https://drive.google.com/file/d/1fa5-WMhEMqhzPLlCurAlpcYlDCgV0hhE/view?usp=drive_link
+In the **didec** directory, you should place our file containing all preprocessed fixations per participant and per image (fixation_events_DS_2023.json). It can be downloaded from here: https://drive.google.com/file/d/1fa5-WMhEMqhzPLlCurAlpcYlDCgV0hhE/view?usp=drive_link
 
 I divided the participants into 4 subsets and ran the extraction code in parallel for all participants. 
 
