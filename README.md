@@ -19,7 +19,31 @@ For any questions regarding the contents of this repository, please contact Ece 
 Download the **DIDEC dataset** from https://didec.uvt.nl/pages/download.html (Emiel van Miltenburg, Ákos Kádár, Ruud Koolen, and Emiel Krahmer. 2018. DIDEC: The Dutch Image Description and Eye-tracking Corpus. In Proceedings of the 27th International Conference on Computational Linguistics (COLING), pages 3658–3669. Association for Computational Linguistics)
 
 # Experiments / Analyses
-How to preprocess the data and conduct the experiments 
+
+This folder contains the scripts to quantify and inspect the variation in human signals, and conduct the experiments in which we aim to predict the signal variation using 50 random split configurations. *If you would like to look at a specific experiment or analysis, I would be happy to point you to the relevant script.*
+
+**Variation in speech onsets:** onset_means.json generated in image_specificity_bleu_corr.py
+**Variation in starting points:** startingpoint_var.json generated in notraining_SP_traintest_spvar.py
+**Variation in descriptions:** didec_image_specificity_selfbleu.json generated in image_specificity_bleu.py
+**Variation in gaze:** gaze_variation_IOU.json generated in gaze_variation_IOU.py
+
+
+The experiments with the **similarity-based prediction approach** are performed using the files whose names start with 'notraining' and contain 'traintest' in the name. For instance, for speech onsets:
+
+notraining_onset_traintest.py (using CLIP)
+
+notraining_onset_traintest_NONE.py (using randomly initialized CLIP)
+
+notraining_onset_traintest_VIT.py (using ViT)
+
+You can change the parameter 'k' that operates how many closest images will be retrieved from the training set, as well as the image representations to be utilized when calculating the similarities (CLIP, ViT or None).
+
+Images representations obtained from CLIP, random CLIP and ViT can be found in this folder: https://drive.google.com/drive/folders/124uqQnwBrqNq3PL5n8cA-0Icjtbc0Iw8?usp=drive_link
+
+In the link above, you can also find the file containing all preprocessed fixations per participant and per image (fixation_events_DS_2023.json).
+
+You can run the correlations_plotting-IOU.ipynb notebook to see the correlation scores between the types of variation.
+
 
 # Segment
 Install the Segment Anything Model (SAM) following the instructions at https://github.com/facebookresearch/segment-anything 
